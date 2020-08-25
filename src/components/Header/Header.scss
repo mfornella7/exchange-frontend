@@ -2,5 +2,125 @@
 @import '../../css/responsive.scss'; 
 
 .Header {
-    
+    @include responsive(desktop, laptop) {
+        padding: 15px 20px;
+        background-color: $black_color;
+        color: $white_color;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .header-left {
+            margin-left: 30px;
+            display: flex;
+            flex-direction: row;
+            .bar-icon {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 10px;
+                font-size: 24px;
+            }
+            .logo {
+                font-family: 'Roboto-Bold';
+                font-size: 28px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .currency-pair {
+                display: flex;
+                flex-direction: row;
+                margin-left: 80px;
+                .currency-text {
+                    font-family: 'Roboto-Bold';
+                    font-size: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .down-icon {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-left: 5px;
+                }
+            }
+            .data-block {
+                display: flex;
+                flex-direction: row;
+                .data-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    margin-left: 20px;
+                    .green-big {
+                        color: $green_color;
+                        font-family: 'Roboto-Bold';
+                        font-size: 18px;
+                    }
+                    .green-normal {
+                        color: $green_color;
+                        font-size: 12px;
+
+                    }
+                    .white-6 {
+                        color: $white_color_6;
+                        font-size: 12px;
+                    }
+                    .white-bold {
+                        font-size: 12px;
+                        font-family: 'Roboto-Bold';
+                    }
+                }
+            }
+        }
+        .header-right {
+            display: flex;
+            flex-direction: row;
+            .menu-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: 'Roboto-Medium';
+                font-size: 16px;
+                margin-right: 30px;
+                cursor: pointer;
+            }
+            .deposit-button {
+                background-color: $blue_color;
+                font-family: 'Roboto-Medium';
+                padding: 8px 12px;
+                border-radius: 6px;
+                cursor: pointer;
+                margin-right: 30px;
+            }
+            .seperator {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-right: 20px;
+                color: $white_color_6;
+            }
+            .user-image {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+            .username {
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: 'Roboto-Medium';
+                color: $white_color_6;
+                font-size: 14px;
+            }
+        }
+    }
+    @include responsive(mobile) {
+    }    
 }
