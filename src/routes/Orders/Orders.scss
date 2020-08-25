@@ -13,6 +13,7 @@
             .tab {
                 color: $white_color_6;
                 padding: 0 40px;
+                cursor: pointer;
                 &.active {
                     color: $blue_color;
                 }

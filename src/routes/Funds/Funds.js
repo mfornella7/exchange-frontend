@@ -8,8 +8,34 @@ class Funds extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 4,
+      selectedTab: 0,
     }
+  }
+
+  componentWillMount() {
+    this.unlisten = this.props.history.listen((location, action) => {
+      let search = location.search;
+      if (search.indexOf('?tab=') === 0) {
+        switch(search.slice(5)) {
+          case 'deposits':
+            this.setState({ selectedTab: 1});
+            break;
+          case 'withdrawals':
+            this.setState({ selectedTab: 2});
+            break;
+          case 'transactions':
+            this.setState({ selectedTab: 4});
+            break;
+          default: 
+            this.setState({ selectedTab: 0});
+        }
+      } else 
+        this.setState({ selectedTab: 0});
+    })
+  }
+
+  componentWillUnmount() {
+    this.unlisten();
   }
 
   renderContent() {

@@ -15,11 +15,19 @@ class Orders extends Component {
     return (
       <div className="Orders">
         <div className="o-tabs">
-          <div className="tab">Balance</div>
-          <div className="tab">Deposits</div>
-          <div className="tab">Withdrawals</div>
+          <div className="tab" onClick={() => {
+            this.props.history.push('/funds?tab=balance')
+          }}>Balance</div>
+          <div className="tab" onClick={() => {
+            this.props.history.push('/funds?tab=deposits')
+          }}>Deposits</div>
+          <div className="tab" onClick={() => {
+            this.props.history.push('/funds?tab=withdrawals')
+          }}>Withdrawals</div>
           <div className="tab active">Open Orders</div>
-          <div className="tab">Transactions</div>
+          <div className="tab" onClick={() => {
+            this.props.history.push('/funds?tab=transactions')
+          }}>Transactions</div>
         </div>
         <div className="title">Open Orders</div>
         <div className="detail-block">

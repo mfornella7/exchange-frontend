@@ -47,6 +47,9 @@
                 }
             }
             .data-block {
+                @media screen and (max-width: 1400px) {
+                    display: none;
+                }
                 display: flex;
                 flex-direction: row;
                 .data-item {

@@ -70,7 +70,9 @@
                     background-color: $grey_color_1;
                     text-align: center;
                     color: $white_color;
+                    transition: 0.2s;
                     &.active {
+                        transition: 0.2s;
                         background-color: $grey_color_3;
                     }
                 }
@@ -83,6 +85,7 @@
                     flex-direction: row;
                     color: $white_color;
                     align-items: center;
+                    transition: 0.2s;
                     .clock {
                         margin-left: auto;
                     }
@@ -91,6 +94,10 @@
                     }
                     .down {
                         margin-right: auto;
+                    }
+                    &.active {
+                        transition: 0.2s;
+                        background-color: $grey_color_3;
                     }
                 }
             }

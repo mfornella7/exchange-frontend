@@ -64,7 +64,9 @@ class Header extends Component {
                     <div className="menu-text" onClick={() =>{
                         this.props.history.push("/funds");
                     }}>Funds</div>
-                    <div className="deposit-button">Deposits</div>
+                    <div className="deposit-button" onClick={() =>{
+                        this.props.history.push("/funds?tab=deposits");
+                    }}>Deposits</div>
                     <div className="seperator">|</div>
                     <div className="user-image">
                         <img src={Img_User} alt=""></img>

@@ -11,7 +11,8 @@ class Home extends Component {
       activeButton: 0,
       step: 0,
       assetOrBalance: 0,
-      selectedTab: 3,
+      selectedTab: 0,
+      marketTab: 0,
       assets: [
         {id: 0, symbol: 'AOA', name:'Aurora', price: 15.45, change: '-2.47%', volume: '39, 183m'},
         {id: 1, symbol: 'AOA', name:'Aurora', price: 15.45, change: '-2.47%', volume: '39, 183m'},
@@ -25,6 +26,104 @@ class Home extends Component {
         {id: 2, symbol: 'AOA', p1: 80.14, p2: 0.01, p3: 304.73, p4: 0},
         {id: 3, symbol: 'USD', p1: 0.00, p2: 0.00, p3: 125.05, p4: 0},
       ]
+    }
+  }
+
+  renderStepbar() {
+    return (
+      <ul className="step-bar">
+        <div 
+          className={this.state.step === 0 ?"rect active":"rect"}
+          onClick={() => { this.setState({step: 0}); }}
+        />
+        <div className="bar"></div>
+        <div 
+          className={this.state.step === 1 ?"rect active":"rect"}
+          onClick={() => { this.setState({step: 1}); }}
+        />
+        <div className="bar"></div>
+        <div 
+          className={this.state.step === 2 ?"rect active":"rect"}
+          onClick={() => { this.setState({step: 2}); }}
+        />
+        <div className="bar"></div>
+        <div 
+          className={this.state.step === 3 ?"rect active":"rect"}
+          onClick={() => { this.setState({step: 3}); }}
+        />
+        <div className="bar"></div>
+        <div 
+          className={this.state.step === 4 ?"rect active":"rect"}
+          onClick={() => { this.setState({step: 4}); }}
+        />
+      </ul>
+    )
+  }
+
+  renderMarketTab() {
+    if (this.state.marketTab === 0) {
+      return (
+        <div>
+          <div className="input-row">
+            <div className="ir-text">Price</div>
+            <input className="ir-input" placeholder="" value="11510,16" id="p1"/>
+            <div className="ir-asset">USDT</div>
+          </div>
+          <div className="input-row">
+            <div className="ir-text">Amount</div>
+            <input className="ir-input" placeholder="" value="0.0000086000"/>
+            <div className="ir-asset">BTC</div>
+          </div>
+          {this.renderStepbar()}
+          <div className="input-row">
+            <div className="ir-text">Total</div>
+            <input className="ir-input" placeholder="" defaultValue="11510,16"/>
+            <div className="ir-asset">USDT</div>
+          </div>
+      </div>
+      )
+    } else if (this.state.marketTab === 1) {
+      return (
+        <div>
+          <div className="input-row">
+            <div className="ir-text">Price</div>
+            <input className="ir-input" placeholder="" value="Market" id="p2"/>
+            <div className="ir-asset">USDT</div>
+          </div>
+          <div className="input-row">
+            <div className="ir-text">Amount</div>
+            <input className="ir-input" placeholder="" value=""/>
+            <div className="ir-asset">BTC</div>
+          </div>
+          {this.renderStepbar()}
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <div className="input-row">
+            <div className="ir-text">Stop</div>
+            <input className="ir-input" placeholder="" value=""/>
+            <div className="ir-asset">USDT</div>
+          </div>
+          <div className="input-row">
+            <div className="ir-text">Limit</div>
+            <input className="ir-input" placeholder="" value="11510,16"/>
+            <div className="ir-asset">USDT</div>
+          </div>
+          <div className="input-row">
+            <div className="ir-text">Amount</div>
+            <input className="ir-input" placeholder=""/>
+            <div className="ir-asset">BTC</div>
+          </div>
+          {this.renderStepbar()}
+          <div className="input-row">
+            <div className="ir-text">Total</div>
+            <input className="ir-input" placeholder=""/>
+            <div className="ir-asset">BTC</div>
+          </div>
+        </div>
+      );
     }
   }
 
@@ -48,9 +147,12 @@ class Home extends Component {
           >SELL</div>
         </div>
         <div className="bb-buttons2">
-          <div className="normal-button active">Limit</div>
-          <div className="normal-button">Market</div>
-          <div className="mixed-button">
+          <div className={this.state.marketTab === 0?"normal-button active":"normal-button"}
+            onClick={() => { this.setState({marketTab: 0}) }}>Limit</div>
+          <div className={this.state.marketTab === 1?"normal-button active":"normal-button"}
+            onClick={() => { this.setState({marketTab: 1}) }}>Market</div>
+          <div className={this.state.marketTab === 2?"mixed-button active":"mixed-button"}
+            onClick={() => { this.setState({marketTab: 2}) }}>
             <i className="fa fa-clock-o clock" aria-hidden="true"></i>
             <div className="text">Stop-limit</div>
             <i className="fa fa-caret-down down" aria-hidden="true"></i>
@@ -60,47 +162,7 @@ class Home extends Component {
             <i className="fas fa-wallet" aria-hidden="true"></i>
             0.00000000000USDT
         </div>
-        <div className="input-row">
-          <div className="ir-text">Price</div>
-          <input className="ir-input" placeholder="" defaultValue="11510,16"/>
-          <div className="ir-asset">USDT</div>
-        </div>
-        <div className="input-row">
-          <div className="ir-text">Amount</div>
-          <input className="ir-input" placeholder="" defaultValue="0.0000086000"/>
-          <div className="ir-asset">BTC</div>
-        </div>
-        <ul className="step-bar">
-          <div 
-            className={this.state.step === 0 ?"rect active":"rect"}
-            onClick={() => { this.setState({step: 0}); }}
-          />
-          <div className="bar"></div>
-          <div 
-            className={this.state.step === 1 ?"rect active":"rect"}
-            onClick={() => { this.setState({step: 1}); }}
-          />
-          <div className="bar"></div>
-          <div 
-            className={this.state.step === 2 ?"rect active":"rect"}
-            onClick={() => { this.setState({step: 2}); }}
-          />
-          <div className="bar"></div>
-          <div 
-            className={this.state.step === 3 ?"rect active":"rect"}
-            onClick={() => { this.setState({step: 3}); }}
-          />
-          <div className="bar"></div>
-          <div 
-            className={this.state.step === 4 ?"rect active":"rect"}
-            onClick={() => { this.setState({step: 4}); }}
-          />
-        </ul>
-        <div className="input-row">
-          <div className="ir-text">Total</div>
-          <input className="ir-input" placeholder="" defaultValue="11510,16"/>
-          <div className="ir-asset">USDT</div>
-        </div>
+        {this.renderMarketTab()}
         <div className={this.state.activeButton?"buy-button sell":"buy-button"}>
           {this.state.activeButton?"Sell BTC":"Buy BTC"}
         </div>
@@ -260,11 +322,12 @@ class Home extends Component {
               onClick={() => { this.setState({selectedTab: 3}); }}
             >Funds</div>
           </div>
+          {this.state.selectedTab === 3?
           <div className="check">
             <input type="checkbox" id="hide" name="hide"/>
             <label htmlFor="hide">Hide small balances</label>
             <i className="fa fa-times" aria-hidden="true"></i>
-          </div>
+          </div>:<div/>}
         </div>
         {this.renderBottomTable()}
       </div>
