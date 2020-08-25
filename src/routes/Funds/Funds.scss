@@ -30,6 +30,333 @@
         .fund-content {
             display: flex;
             flex-direction: column;
+            .balance-block {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background: $grey_color_4;
+                padding: 70px 0 50px 0;
+                .balance-item {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 auto 0 auto;
+                    .grey-text{
+                        color: $white_color_6;
+                    }
+                    .balance {
+                        display: flex;
+                        padding: 10px 0 10px 0;
+                        flex-direction: row;
+                        .price {
+                            font-family: 'Roboto-Bold';
+                            color: $white_color;
+                            font-size: 38px;
+                            line-height: 33px;
+                            &.red {
+                                color: $red_color;
+                            }
+                            &.green {
+                                color: $green_color;
+                            }
+                        }
+                        .usd {
+                            font-family: 'Roboto-Bold';
+                            color: $white_color;
+                            font-size: 20px;
+                            margin-left: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+            .wallet-block {
+                padding: 30px 40px;
+                background: $grey_color_4;
+                .wb-header {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .check-option {
+                        display: flex;
+                        flex-direction: row;
+                        .check {
+                            width: 60px;
+                            border-radius: 60px;
+                            height: 33px;
+                            border: 1px solid $white_color;
+                            .circle {
+                                margin-left: 3px;
+                                margin-top: 1px;
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 30px;
+                                background: $white_color;
+                            }
+                        }
+                        .co-text {
+                            color: $white_color;
+                            margin-left: 15px;
+                            font-family: 'Roboto-Bold';  
+                            font-size: 24px;
+                            margin-top: 3px;
+                        }
+                    }
+                    .search-row {
+                        background-color: $black_color;
+                        padding: 10px 15px;
+                        width: 300px;
+                        display: flex;
+                        flex-direction: row;
+                        i {
+                            color: $white_color_6;
+                            margin-right: 10px;
+                        }
+                        .sr-input {
+                            font-family: 'Roboto-Bold';                
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: $white_color;
+                            background: none;
+                            border: none;
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                        margin-bottom: 30px;
+                    }
+                }
+                .text {
+                    color: $white_color;
+                    margin-top: 30px;
+                    padding-bottom: 80px;
+                }
+            }
+            .deposit-block {
+                padding: 30px 40px 150px 40px;
+                background: $grey_color_4;
+                .db-header {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 80px;
+                    .db-title {
+                        color: $white_color;
+                        font-family: 'Roboto-Bold';
+                        font-size: 34px;
+                        margin-right: 40px;
+                    }
+                    .btc-img {
+                        width: 22px;
+                        height: 22px;
+                        margin: auto 0;
+                        margin-right: 5px;
+                    }
+                    .currency {
+                        color: $white_color;
+                        margin-right: 30px;
+                        font-family: 'Roboto-Bold';
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 18px;
+                        margin: auto 0;
+                        i {
+                            margin-left: 5px;
+                        }
+                    }
+                    .av-text {
+                        color: $white_color_6;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        font-size: 12px;
+                        margin: auto 0;
+                        margin-left: 30px;
+                        span {
+                            margin-left: 5px;
+                        }
+                        .green {
+                            color: $green_color;
+                        }
+                    }
+                }
+                .btc-image {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: 5px;
+                }
+                .currency-text {
+                    color: $white_color;
+                    font-family: 'Roboto-Bold';
+                    text-align: center;
+                    margin-bottom: 50px;
+                    font-size: 24px;
+                }
+                .white-text {
+                    font-family: 'Roboto-Bold';
+                    text-align: center;
+                    font-size: 18px;
+                    color: $white_color;
+                }
+                .grey-text {
+                    color: $white_color_6;
+                    font-size: 14px;
+                    text-anchor: end;
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                .blue-button {
+                    color: $white_color;
+                    background: $blue_color;
+                    border-radius: 5px;
+                    text-align: center;
+                    padding: 5px 20px;
+                    margin: 0 auto;
+                    width: fit-content;
+                    cursor: pointer;
+                    user-select: none;
+                }
+            }
+            .completed-block {
+                margin-top: 20px;
+                padding: 20px 40px;
+                background: $grey_color_4;
+                .table-row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: 30px;
+                    margin-bottom: 40px;
+                    .cell {
+                        color: $white_color_6;
+                        font-size: 12px;
+                    }
+                }
+                .cb-title {
+                    color: $white_color;
+                    font-family: 'Roboto-Bold';
+                    font-size: 20px;
+                    margin-bottom: 30px;
+                }
+                .blue-text {
+                    color: $blue_color;
+                    font-size: 16px;
+                }
+                .white-text {
+                    margin-top: 15px;
+                    color: $white_color;
+                    font-size: 12px;
+                }
+            }
+            .order-block {
+                padding: 20px 40px;
+                padding-bottom: 100px;
+                background: $grey_color_4;
+                .ob-title {
+                    color: $white_color;
+                    font-family: 'Roboto-Bold';
+                    font-size: 30px;
+                    margin-bottom: 40px;
+                }
+                .ob-sub-title {
+                    color: $white_color;
+                    font-family: 'Roboto-Bold';
+                    font-size: 24px;
+                    margin-bottom: 40px;
+                }
+                .blue-text {
+                    color: $blue_color;
+                    font-size: 16px;
+                }
+                .white-text {
+                    margin-top: 20px;
+                    color: $white_color;
+                    font-size: 14px;
+                }
+                .account-row {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 40px;
+                    .text {
+                        color: $white_color;
+                        font-family: 'Roboto-Bold';
+                        font-size: 24px;
+                    }
+                    img {
+                        width: 28px;
+                        height: 28px;
+                        margin-left: 40px;
+                        margin-right: 5px;
+                    }
+                    i {
+                        color: $white_color;
+                        margin: auto 0;
+                        margin-left: 3px;
+                    }
+                }
+            }
+            .overview-block {
+                display: flex;
+                flex-direction: column;
+                padding: 40px 20px 40px 40px;
+                background: $grey_color_4;
+                width: 400px;
+                .ob-title {
+                    color: $white_color;
+                    font-family: 'Roboto-Bold';
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
+                .filter-row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    &.second {
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid $grey_color_1;
+                    }
+                    .ftext {
+                        color: $white_color_6;
+                        font-size: 14px;
+                    }
+                    .dfilters {
+                        display: flex;
+                        flex-direction: row;
+                        .item {
+                            display: flex;
+                            flex-direction: row;
+                            color: white;
+                            margin-right: 10px;
+                            font-size: 14px;
+                            i {
+                                margin: auto 0;
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
+                .sub-title {
+                    color: $white_color;
+                    font-family: 'Roboto-Bold';
+                    font-size: 22px;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                }
+                .text {
+                    color: $white_color_6;
+                    font-size: 14px;
+                    margin-bottom: 30px;
+                }
+                .send-button {
+                    color: $blue_color;
+                    border: 1px solid $blue_color;
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: fit-content;
+                }
+            }
         }
     }
     @include responsive(mobile) {
