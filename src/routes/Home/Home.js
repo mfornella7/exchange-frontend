@@ -11,7 +11,7 @@ class Home extends Component {
       activeButton: 0,
       step: 0,
       assetOrBalance: 0,
-      selectedTab: 0,
+      selectedTab: 3,
       assets: [
         {id: 0, symbol: 'AOA', name:'Aurora', price: 15.45, change: '-2.47%', volume: '39, 183m'},
         {id: 1, symbol: 'AOA', name:'Aurora', price: 15.45, change: '-2.47%', volume: '39, 183m'},
@@ -271,11 +271,96 @@ class Home extends Component {
     )
   }
   renderBottomTable() {
-    return (
-      <div className="bottom-table">
-
-      </div>
-    )
+    if(this.state.selectedTab === 0)
+      return (
+        <div className="bottom-table">
+          <div className="table-row">
+            <div className="cell">Date</div>
+            <div className="cell">Pair</div>
+            <div className="cell">Type</div>
+            <div className="cell">Side</div>
+            <div className="cell">Price</div>
+            <div className="cell">Amount</div>
+            <div className="cell">Filled</div>
+            <div className="cell">Total</div>
+            <div/>
+            <div className="cell1">
+              <div>Trigger Conditions</div>
+              <div className="red">Cancel All</div>
+              <div>|</div>
+              <i className="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <div/>
+          </div>
+        </div>
+      )
+    if(this.state.selectedTab === 1)
+      return (
+        <div className="bottom-table">
+          <div className="table-row">
+            <div className="cell">
+              Coin
+              <i className="fa fa-caret-down" aria-hidden="true"></i>
+            </div>
+            <div className="cell">Total Balance</div>
+            <div className="cell">Balance Available</div>
+            <div className="cell">In order</div>
+            <div className="cell">BTC Value</div>
+            <div/>
+          </div>
+        </div>
+      )
+    if(this.state.selectedTab === 2)
+      return (
+        <div className="bottom-table">
+          <div className="date-row">
+            <div className="period active">1 Day</div>
+            <div className="period">1 Week</div>
+            <div className="period">1 Month</div>
+            <div className="period">3 Months</div>
+            <input className="filter-input" placeholder="YYYY-MM-DD - YYYY-MM-DD"/>
+            <div className="period active">Search</div>
+          </div>
+          <div className="table-row">
+            <div className="cell">Data</div>
+            <div className="cell">Pair</div>
+            <div className="cell">Side</div>
+            <div className="cell">Price</div>
+            <div className="cell">Concluded</div>
+            <div className="cell">Fee</div>
+            <div className="cell">Total</div>
+            <div/>
+            <div/>
+          </div>
+        </div>
+      )
+    if(this.state.selectedTab === 3)
+      return (
+        <div className="bottom-table">
+          <div className="date-row">
+            <div className="period active">1 Day</div>
+            <div className="period">1 Week</div>
+            <div className="period">1 Month</div>
+            <div className="period">3 Months</div>
+            <input className="filter-input" placeholder="YYYY-MM-DD - YYYY-MM-DD"/>
+            <div className="period active">Search</div>
+          </div>
+          <div className="table-row">
+            <div className="cell">Data</div>
+            <div className="cell">Pair</div>
+            <div className="cell">Type</div>
+            <div className="cell">Average</div>
+            <div className="cell">Price</div>
+            <div className="cell">Concluded</div>
+            <div className="cell">Amount</div>
+            <div className="cell">Total</div>
+            <div className="cell">Activity Conditions</div>
+            <div className="cell">Status<i className="fa fa-caret-down" aria-hidden="true"></i></div>
+            <div/>
+            <div/>
+          </div>
+        </div>
+      )
   }
   render() {
     return (
