@@ -20,7 +20,9 @@ class Header extends Component {
                     <div className="bar-icon">
                         <i className="fa fa-bars" aria-hidden="true"></i>
                     </div>
-                    <div className="logo">LOGO</div>
+                    <div className="logo" onClick={() => {
+                        this.props.history.push('/')
+                    }}>LOGO</div>
                     <div className="currency-pair">
                         <div className="currency-text">BTC/USDT</div>
                         <div className="down-icon">
@@ -51,9 +53,17 @@ class Header extends Component {
                     </div>
                 </div>
                 <div className="header-right">
-                    <div className="menu-text">Referral Program</div>
-                    <div className="menu-text">Orders</div>
-                    <div className="menu-text">Funds</div>
+                    <div className="menu-text" onClick={() =>{
+                        this.props.history.push("/referral");
+                    }}>
+                        Referral Program
+                    </div>
+                    <div className="menu-text" onClick={() =>{
+                        this.props.history.push("/orders");
+                    }}>Orders</div>
+                    <div className="menu-text" onClick={() =>{
+                        this.props.history.push("/funds");
+                    }}>Funds</div>
                     <div className="deposit-button">Deposits</div>
                     <div className="seperator">|</div>
                     <div className="user-image">

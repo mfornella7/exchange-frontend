@@ -1,0 +1,44 @@
+@import '../../css/constants.scss'; 
+@import '../../css/responsive.scss'; 
+
+.Orders {
+    @include responsive(desktop, laptop) {
+        padding: 30px 150px;
+        .o-tabs {
+            padding: 30px;
+            background: $grey_color;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;;
+            .tab {
+                color: $white_color_6;
+                padding: 0 40px;
+                &.active {
+                    color: $blue_color;
+                }
+            }
+        }
+        .title {
+            font-family: 'Roboto-Bold';
+            color: $white_color;
+            font-size: 34px;
+            padding: 30px 0 40px 0;
+        }
+        .detail-block {
+            padding: 40px;
+            padding-bottom: 140px;
+            background: $grey_color;
+            .blue-text {
+                color: $blue_color;
+                font-size: 18px;
+            }
+            .white-text {
+                margin-top: 20px;
+                color: $white_color;
+                font-size: 16px;
+            }
+        }
+    }
+    @include responsive(mobile) {
+    }
+}
