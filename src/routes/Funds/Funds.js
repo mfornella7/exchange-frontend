@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { compose }          from 'redux';
 
+import { updateFundsTab }   from '../../store/reducers/setting';
 import './Funds.scss';
 
 class Funds extends Component {
@@ -13,29 +14,15 @@ class Funds extends Component {
   }
 
   componentWillMount() {
-    this.unlisten = this.props.history.listen((location, action) => {
-      let search = location.search;
-      if (search.indexOf('?tab=') === 0) {
-        switch(search.slice(5)) {
-          case 'deposits':
-            this.setState({ selectedTab: 1});
-            break;
-          case 'withdrawals':
-            this.setState({ selectedTab: 2});
-            break;
-          case 'transactions':
-            this.setState({ selectedTab: 4});
-            break;
-          default: 
-            this.setState({ selectedTab: 0});
-        }
-      } else 
-        this.setState({ selectedTab: 0});
-    })
-  }
-
-  componentWillUnmount() {
-    this.unlisten();
+    if (this.props.fundsTab >= 0) {
+      console.log(this.props.fundsTab)
+      this.setState({
+        selectedTab: this.props.fundsTab
+      });
+      this.props.updateFundsTab({
+        fundsTab: -1
+      });
+    }
   }
 
   renderContent() {
@@ -251,10 +238,12 @@ class Funds extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  mode: state.setting.mode
+  mode: state.setting.mode,
+  fundsTab: state.setting.fundsTab
 });
 
 const mapDispatchToProps = {
+  updateFundsTab: updateFundsTab
 };
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(Funds);

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect }          from 'react-redux';
 import { compose }          from 'redux';
 
+import { updateFundsTab }   from '../../store/reducers/setting';
 import './Orders.scss';
 
 class Orders extends Component {
@@ -17,17 +18,21 @@ class Orders extends Component {
       <div className="Orders">
         <div className={"o-tabs" + wmode}>
           <div className="tab" onClick={() => {
-            this.props.history.push('/funds?tab=balance')
+            this.props.updateFundsTab({fundsTab: 0});
+            this.props.history.push('/funds');
           }}>Balance</div>
           <div className="tab" onClick={() => {
-            this.props.history.push('/funds?tab=deposits')
+            this.props.updateFundsTab({fundsTab: 1});
+            this.props.history.push('/funds')
           }}>Deposits</div>
           <div className="tab" onClick={() => {
-            this.props.history.push('/funds?tab=withdrawals')
+            this.props.updateFundsTab({fundsTab: 2});
+            this.props.history.push('/funds')
           }}>Withdrawals</div>
           <div className="tab active">Open Orders</div>
           <div className="tab" onClick={() => {
-            this.props.history.push('/funds?tab=transactions')
+            this.props.updateFundsTab({fundsTab: 4});
+            this.props.history.push('/funds')
           }}>Transactions</div>
         </div>
         <div className={"title" + wmode}>Open Orders</div>
@@ -46,6 +51,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
+  updateFundsTab: updateFundsTab
 };
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(Orders);
