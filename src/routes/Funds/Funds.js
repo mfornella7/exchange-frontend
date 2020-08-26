@@ -15,7 +15,16 @@ class Funds extends Component {
 
   componentWillMount() {
     if (this.props.fundsTab >= 0) {
-      console.log(this.props.fundsTab)
+      this.setState({
+        selectedTab: this.props.fundsTab
+      });
+      this.props.updateFundsTab({
+        fundsTab: -1
+      });
+    }
+  }
+  componentDidUpdate() {
+    if (this.props.fundsTab >= 0) {
       this.setState({
         selectedTab: this.props.fundsTab
       });

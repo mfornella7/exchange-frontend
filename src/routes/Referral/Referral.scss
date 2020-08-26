@@ -128,5 +128,129 @@
         }
     }
     @include responsive(mobile) {
+        padding: 15px 20px;
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            .title {
+                font-family: 'Roboto-Bold';
+                color: $white_color;
+                font-size: 20px;
+                &.wmode {
+                    color: $black_color;
+                }
+            }
+            .rule {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-size: 14px;
+                color: $blue_color;
+            }
+        }
+        .invite-block {
+            padding: 20px;
+            background: $grey_color;
+            &.wmode {
+                background-color: $white_color;
+                border: 1px solid $grey_color_2;
+            }
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .details {
+                display: flex;
+                flex-direction: row;
+                .item {
+                    margin-right: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    .description {
+                        color: $grey_color_2;
+                        font-size: 14px;
+                         i {
+                             margin-left: 8px;
+                         }
+                    }
+                    .percent {
+                        color: $white_color;
+                        font-family: 'Roboto-Bold';
+                        font-size: 26px;
+                        padding: 10px 0 5px 0;
+                        &.wmode {
+                            color: $black_color;
+                        }
+                    }
+                }
+            }
+            .invite-button {
+                margin: auto 0;
+                margin-right: 40px;
+                background: $blue_color;
+                color: $white_color;
+                padding: 10px 20px;
+                cursor: pointer;
+                user-select: none;
+                border-radius: 5px;
+            }
+        }
+        .payout-block {
+            display: flex;
+            flex-direction: column;
+            background-color: $grey_color;
+            color: $white_color;
+            &.wmode {
+                color: $black_color;
+                background-color: rgb(240, 240, 240);
+                border: 1px solid $grey_color_2;
+            }
+            margin-top: 20px;
+            .pb-header {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                .tab {
+                    padding: 20px;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .text {
+                        color: $grey_color_2;
+                        font-size: 14px;
+                         i {
+                             margin-left: 8px;
+                         }
+                    }
+                    .usd {
+                        font-family: 'Roboto-Bold';
+                        font-size: 26px;
+                        padding-top: 10px;
+                    }
+                    &.deactive {
+                        background-color: #0D0E11;
+                        &.wmode {
+                            color: $black_color;
+                            background-color: $white_color;
+                        }
+                    }
+                }
+            }
+            .text-white {
+                text-align: center;
+                padding-top: 70px;
+                font-family: 'Roboto-Bold';
+                font-size: 20px;
+            }
+            .text-grey {
+                text-align: center;
+                color: $grey_color_2;
+                padding-top: 20px;
+                padding-bottom: 60px;
+                font-family: 'Roboto-Bold';
+                font-size: 16px;
+            }
+        }
     }
 }

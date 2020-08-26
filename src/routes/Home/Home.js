@@ -3,6 +3,7 @@ import { connect }          from 'react-redux';
 import { compose }          from 'redux';
 
 import './Home.scss';
+import Img_Order from '../../assets/images/orders.png';
 
 class Home extends Component {
   constructor(props) {
@@ -344,6 +345,13 @@ class Home extends Component {
     if(this.state.selectedTab === 0)
       return (
         <div className={"bottom-table" + wmode}>
+          <div className="close-row">
+            <div className="check">
+              <input type="checkbox" id="hide" name="hide"/>
+              <label htmlFor="hide">Hide Other Pairs</label>
+            </div>
+            <div className="close-button">Cancell All</div>
+          </div>
           <div className="table-row">
             <div className="cell">Date</div>
             <div className="cell">Pair</div>
@@ -362,11 +370,22 @@ class Home extends Component {
             </div>
             <div/>
           </div>
+          <div className="img-row">
+            <img src={Img_Order} alt=""/>
+            <div className="text">You have no open orders</div>
+          </div>
         </div>
       )
     if(this.state.selectedTab === 1)
       return (
         <div className={"bottom-table" + wmode}>
+          <div className="close-row">
+            <div className="check">
+              <input type="checkbox" id="hide" name="hide"/>
+              <label htmlFor="hide">Hide Other Pairs</label>
+            </div>
+            <div className="close-button">Cancell All</div>
+          </div>
           <div className="table-row">
             <div className="cell">
               Coin
@@ -383,6 +402,13 @@ class Home extends Component {
     if(this.state.selectedTab === 2)
       return (
         <div className={"bottom-table" + wmode}>
+          <div className="close-row">
+            <div className="check">
+              <input type="checkbox" id="hide" name="hide"/>
+              <label htmlFor="hide">Hide Other Pairs</label>
+            </div>
+            <div className="close-button">Cancell All</div>
+          </div>
           <div className="date-row">
             <div className={"period active" + wmode}>1 Day</div>
             <div className="period">1 Week</div>
@@ -407,6 +433,13 @@ class Home extends Component {
     if(this.state.selectedTab === 3)
       return (
         <div className={"bottom-table" + wmode}>
+          <div className="close-row">
+            <div className="check">
+              <input type="checkbox" id="hide" name="hide"/>
+              <label htmlFor="hide">Hide Other Pairs</label>
+            </div>
+            <div className="close-button">Cancell All</div>
+          </div>
           <div className="date-row">
             <div className={"period active" + wmode}>1 Day</div>
             <div className="period">1 Week</div>

@@ -4,14 +4,14 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom'
 import './Header.scss';
 
-import { updateMode } from '../../store/reducers/setting';
+import { updateMode, updateFundsTab } from '../../store/reducers/setting';
 import Img_User from '../../assets/images/user.png';
 
 class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            navmenu: false,
         };
     }
     componentDidMount() {
@@ -31,12 +31,49 @@ class Header extends Component {
         }
     }
 
+    onNavClick() {
+        if(window.innerWidth < 1080) {
+            this.setState({
+                navmenu: true
+            })
+        }
+    }
+
+    renderNavMenu() {
+        if(this.state.navmenu === false || window.innerWidth >= 1080)  return;
+        return (
+            <div className="navmenu">
+                <div className="menu-text" onClick={() =>{
+                    this.props.history.push("/referral");
+                    this.setState({navmenu: false})
+                }}>
+                    Referral Program
+                </div>
+                <div className="menu-text" onClick={() =>{
+                    this.props.history.push("/orders");
+                    this.setState({navmenu: false})
+                }}>Orders</div>
+                <div className="menu-text" onClick={() =>{
+                    this.props.updateFundsTab({fundsTab: 0});
+                    this.props.history.push("/funds");
+                    this.setState({navmenu: false})
+                }}>Funds</div>
+                <div className="menu-text" onClick={() =>{
+                    this.props.updateFundsTab({fundsTab: 1});
+                    this.props.history.push("/funds");
+                    this.setState({navmenu: false})
+                }}>Deposits</div>
+            </div>
+        )
+    }
+
     render() {
         let wmode = this.props.mode === 'white' ? ' wmode' : '';
         return (
             <div className={"Header" + wmode}>
+                {this.renderNavMenu()}
                 <div className="header-left">
-                    <div className="bar-icon">
+                    <div className="bar-icon" onClick={() => this.onNavClick()}>
                         <i className="fa fa-bars" aria-hidden="true"></i>
                     </div>
                     <div className="logo" onClick={() => {
@@ -46,6 +83,15 @@ class Header extends Component {
                         <div className="currency-text">BTC/USDT</div>
                         <div className="down-icon">
                             <i className="fa fa-caret-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div className="mobile-data">
+                        <div className="green-big">11,582.36</div>
+                        <div className="mode" onClick={() => this.onChangeMode()}>
+                            {this.props.mode === 'dark'?
+                            <i className="fa fa-sun-o" aria-hidden="true"></i>:
+                            <i className="fa fa-moon-o" aria-hidden="true" style={{color: 'black'}}></i>
+                            }
                         </div>
                     </div>
                     <div className="data-block">
@@ -81,10 +127,12 @@ class Header extends Component {
                         this.props.history.push("/orders");
                     }}>Orders</div>
                     <div className="menu-text" onClick={() =>{
+                        this.props.updateFundsTab({fundsTab: 0});
                         this.props.history.push("/funds");
                     }}>Funds</div>
                     <div className={"deposit-button" + wmode} onClick={() =>{
-                        this.props.history.push("/funds?tab=deposits");
+                        this.props.updateFundsTab({fundsTab: 1});
+                        this.props.history.push("/funds");
                     }}>Deposits</div>
                     <div className="seperator">|</div>
                     <div className="mode" onClick={() => this.onChangeMode()}>
@@ -109,6 +157,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     updateMode: updateMode,
+    updateFundsTab: updateFundsTab
 };
 
 export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(Header);

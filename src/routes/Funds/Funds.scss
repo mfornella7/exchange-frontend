@@ -384,5 +384,385 @@
         }
     }
     @include responsive(mobile) {
+        padding: 15px 10px;
+        color: $white_color;
+        &.wmode {
+            color: $black_color;
+        }
+        .f-tabs {
+            padding: 10px 0;
+            background-color: $grey_color;
+            &.wmode {
+                background-color: $white_color;
+                border: 1px solid $grey_color_2;
+                border-bottom: none;
+            }
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            .tab {
+                color: $grey_color_2;
+                padding: 0 2px;
+                cursor: pointer;
+                transition: 0.2s;
+                font-size: 12px;
+                &.active {
+                    color: $blue_color;
+                    transition: 0.2s;
+                }
+            }
+        }
+        .title {
+            font-family: 'Roboto-Bold';
+            font-size: 24px;
+            padding: 10px 0 20px 0;
+        }
+        .fund-content {
+            display: flex;
+            flex-direction: column;
+            .balance-block {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: $grey_color_4;
+                padding: 30px 0 30px 0;
+                &.wmode {
+                    background-color: $white_color;
+                    border: 1px solid $grey_color_2;
+                }
+                .balance-item {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 auto 0 auto;
+                    .grey-text{
+                        color: $grey_color_2;
+                        font-size: 12px;
+                    }
+                    .balance {
+                        display: flex;
+                        padding: 10px 0 10px 0;
+                        flex-direction: row;
+                        .price {
+                            font-family: 'Roboto-Bold';
+                            font-size: 24px;
+                            line-height: 24px;
+                            &.red {
+                                color: $red_color;
+                            }
+                            &.green {
+                                color: $green_color;
+                            }
+                        }
+                        .usd {
+                            font-family: 'Roboto-Bold';
+                            font-size: 20px;
+                            margin-left: 10px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                        }
+                    }
+                }
+            }
+            .wallet-block {
+                padding: 10px 20px;
+                background: $grey_color_4;
+                &.wmode {
+                    background-color: $white_color;
+                    border: 1px solid $grey_color_2;
+                }
+                .wb-header {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .check-option {
+                        display: flex;
+                        flex-direction: row;
+                        .check {
+                            width: 30px;
+                            min-width: 30px;
+                            border-radius: 30px;
+                            height: 17px;
+                            border: 1px solid $white_color;
+                            &.wmode {
+                                border: 1px solid $grey_color_3;
+                            }
+                            .circle {
+                                margin-left: 3px;
+                                margin-top: 1px;
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 15px;
+                                background-color: $white_color;
+                                &.wmode {
+                                    background-color: $grey_color_3;
+                                }
+                            }
+                        }
+                        .co-text {
+                            margin-left: 15px;
+                            font-family: 'Roboto-Bold';  
+                            font-size: 16px;
+                            padding-left: 10px;
+                            margin: auto 0;
+                        }
+                    }
+                    .search-row {
+                        background-color: $black_color;
+                        margin-top: 20px;
+                        &.wmode {
+                            background-color: rgb(240, 240, 240);
+                        }
+                        padding: 10px 15px;
+                        display: flex;
+                        flex-direction: row;
+                        i {
+                            color: $grey_color_2;
+                            margin-right: 10px;
+                        }
+                        .sr-input {
+                            font-family: 'Roboto-Bold';                
+                            font-size: 16px;
+                            line-height: 19px;
+                            background: none;
+                            border: none;
+                            color: $grey_color_3;
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+                .text {
+                    margin-top: 20px;
+                    padding-bottom: 40px;
+                }
+            }
+            .deposit-block {
+                padding: 10px 20px 50px 20px;
+                background-color: $grey_color_4;
+                &.wmode {
+                    background-color: $white_color;
+                    border: 1px solid $grey_color_2;
+                }
+                .db-header {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 30px;
+                    .db-title {
+                        font-family: 'Roboto-Bold';
+                        font-size: 20px;
+                        margin: auto 0;
+                        margin-right: 15px;
+                    }
+                    .btc-img {
+                        width: 22px;
+                        height: 22px;
+                        margin: auto 0;
+                        margin-right: 5px;
+                    }
+                    .currency {
+                        margin-right: 10px;
+                        font-family: 'Roboto-Bold';
+                        display: flex;
+                        flex-direction: row;
+                        font-size: 18px;
+                        margin: auto 0;
+                        i {
+                            margin-left: 5px;
+                        }
+                    }
+                    .av-text {
+                        color: $grey_color_2;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        font-size: 12px;
+                        margin: auto 0;
+                        margin-left: 15px;
+                        .green {
+                            color: $green_color;
+                        }
+                    }
+                }
+                .btc-image {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: 5px;
+                }
+                .currency-text {
+                    font-family: 'Roboto-Bold';
+                    text-align: center;
+                    margin-bottom: 50px;
+                    font-size: 24px;
+                }
+                .white-text {
+                    font-family: 'Roboto-Bold';
+                    text-align: center;
+                    font-size: 18px;
+                }
+                .grey-text {
+                    color: $grey_color_2;
+                    font-size: 14px;
+                    text-anchor: end;
+                    text-align: center;
+                    margin: 20px 0;
+                }
+                .blue-button {
+                    background: $blue_color;
+                    border-radius: 5px;
+                    text-align: center;
+                    padding: 5px 20px;
+                    margin: 0 auto;
+                    width: fit-content;
+                    cursor: pointer;
+                    user-select: none;
+                    &.wmode {
+                        color: $white_color;
+                    }
+                }
+            }
+            .completed-block {
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: $grey_color_4;
+                &.wmode {
+                    background-color: $white_color;
+                    border: 1px solid $grey_color_2;
+                }
+                .table-row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-top: 30px;
+                    margin-bottom: 40px;
+                    .cell {
+                        color: $grey_color_2;
+                        font-size: 12px;
+                    }
+                }
+                .cb-title {
+                    font-family: 'Roboto-Bold';
+                    font-size: 20px;
+                    margin-bottom: 30px;
+                }
+                .blue-text {
+                    color: $blue_color;
+                    font-size: 16px;
+                }
+                .white-text {
+                    margin-top: 15px;
+                    font-size: 12px;
+                }
+            }
+            .order-block {
+                padding: 10px 20px;
+                padding-bottom: 40px;
+                background-color: $grey_color_4;
+                &.wmode {
+                    background-color: $white_color;
+                    border: 1px solid $grey_color_2;
+                }
+                .ob-title {
+                    font-family: 'Roboto-Bold';
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                }
+                .ob-sub-title {
+                    font-family: 'Roboto-Bold';
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
+                .blue-text {
+                    color: $blue_color;
+                    font-size: 16px;
+                }
+                .white-text {
+                    margin-top: 20px;
+                    font-size: 14px;
+                }
+                .account-row {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 20px;
+                    .text {
+                        font-family: 'Roboto-Bold';
+                        font-size: 24px;
+                    }
+                    img {
+                        width: 28px;
+                        height: 28px;
+                        margin-left: 30px;
+                        margin-right: 5px;
+                    }
+                    i {
+                        margin: auto 0;
+                        margin-left: 3px;
+                    }
+                }
+            }
+            .overview-block {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 20px 30px 20px;
+                background: $grey_color_4;
+                &.wmode {
+                    background-color: $white_color;
+                    border: 1px solid $grey_color_2;
+                }
+                .ob-title {
+                    font-family: 'Roboto-Bold';
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                }
+                .filter-row {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    &.second {
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid $grey_color_1;
+                    }
+                    .ftext {
+                        color: $grey_color_2;
+                        font-size: 14px;
+                    }
+                    .dfilters {
+                        display: flex;
+                        flex-direction: row;
+                        .item {
+                            display: flex;
+                            flex-direction: row;
+                            margin-right: 10px;
+                            font-size: 14px;
+                            i {
+                                margin: auto 0;
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
+                .sub-title {
+                    font-family: 'Roboto-Bold';
+                    font-size: 22px;
+                    margin-top: 30px;
+                    margin-bottom: 10px;
+                }
+                .text {
+                    color: $grey_color_2;
+                    font-size: 14px;
+                    margin-bottom: 30px;
+                }
+                .send-button {
+                    color: $blue_color;
+                    border: 1px solid $blue_color;
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: fit-content;
+                }
+            }
+        }
     }
 }
