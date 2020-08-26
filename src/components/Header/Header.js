@@ -4,6 +4,7 @@ import { compose } from 'redux';
 import { withRouter } from 'react-router-dom'
 import './Header.scss';
 
+import { updateMode } from '../../store/reducers/setting';
 import Img_User from '../../assets/images/user.png';
 
 class Header extends Component {
@@ -13,9 +14,27 @@ class Header extends Component {
 
         };
     }
+    componentDidMount() {
+    }
+
+    onChangeMode() {
+        if (this.props.mode === 'dark') {
+            this.props.updateMode({
+                mode: 'white'
+            });
+            document.body.style.background = 'white';
+        } else {
+            this.props.updateMode({
+                mode: 'dark'
+            });
+            document.body.style.background = 'black';
+        }
+    }
+
     render() {
+        let wmode = this.props.mode === 'white' ? ' wmode' : '';
         return (
-            <div className="Header">
+            <div className={"Header" + wmode}>
                 <div className="header-left">
                     <div className="bar-icon">
                         <i className="fa fa-bars" aria-hidden="true"></i>
@@ -64,10 +83,16 @@ class Header extends Component {
                     <div className="menu-text" onClick={() =>{
                         this.props.history.push("/funds");
                     }}>Funds</div>
-                    <div className="deposit-button" onClick={() =>{
+                    <div className={"deposit-button" + wmode} onClick={() =>{
                         this.props.history.push("/funds?tab=deposits");
                     }}>Deposits</div>
                     <div className="seperator">|</div>
+                    <div className="mode" onClick={() => this.onChangeMode()}>
+                        {this.props.mode === 'dark'?
+                        <i className="fa fa-sun-o" aria-hidden="true"></i>:
+                        <i className="fa fa-moon-o" aria-hidden="true" style={{color: 'black'}}></i>
+                        }
+                    </div>
                     <div className="user-image">
                         <img src={Img_User} alt=""></img>
                     </div>
@@ -83,7 +108,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-
+    updateMode: updateMode,
 };
 
 export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(Header);

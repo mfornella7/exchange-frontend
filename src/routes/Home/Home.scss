@@ -2,14 +2,26 @@
 @import '../../css/responsive.scss'; 
 
 .Home {
-    background-color: black;
+    background-color: $black_color;
+    color: $white_color;
     padding: 0 10px 20px 10px;
+    &.wmode {
+        background-color: $white_color;
+        color: $black_color;
+        padding: 0;
+    }
     .top-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        &.wmode {
+            border-bottom: 1px solid $grey_color_2;
+        }
         .buysell-block {
             background-color: $grey_color;
+            &.wmode {
+                background-color: $white_color;
+            }
             display: flex;
             flex-direction: column;
             padding: 20px 8px;
@@ -22,11 +34,10 @@
                 .order-text {
                     font-family: 'Roboto-Bold';
                     font-size: 18px;
-                    color: $white_color;
                 }
                 .order-icon {
                     i {
-                        color: $white_color_6;
+                        color: $grey_color_3;
                         font-size: 18px;
                     }
                 }
@@ -39,12 +50,14 @@
                     margin-top: 20px;
                     width: calc(50% - 5px);
                     border: 1px solid $grey_color_1;
-                    color: $white_color;
                     text-align: center;
                     padding: 10px 0;
                     font-family: 'Roboto-Bold';
                     cursor: pointer;
                     transition: .2s;
+                    &.wmode {
+                        color: $white_color;
+                    }
                     &.red {
                         background-color: $red_color;
                         border: 1px solid $red_color;
@@ -69,21 +82,25 @@
                     padding: 5px 0;
                     background-color: $grey_color_1;
                     text-align: center;
-                    color: $white_color;
                     transition: 0.2s;
                     &.active {
                         transition: 0.2s;
                         background-color: $grey_color_3;
                     }
+                    &.wmode {
+                        color: $white_color;
+                    }
                 }
                 .mixed-button {
+                    &.wmode {
+                        color: $white_color;
+                    }
                     cursor: pointer;
                     width: calc(40% - 5px);
                     padding: 5px 0;
                     background-color: $grey_color_1;
                     display: flex;
                     flex-direction: row;
-                    color: $white_color;
                     align-items: center;
                     transition: 0.2s;
                     .clock {
@@ -121,7 +138,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     margin-left: 5px;
                 }
                 .ir-input {
@@ -133,6 +150,9 @@
                     background: none;
                     border: 1px solid $grey_color_3;
                     text-align: right;
+                    &.wmode {
+                        color: $black_color;
+                    }
                     &:focus {
                         outline: none;
                     }
@@ -141,7 +161,7 @@
                 .ir-asset {
                     width: 15%;
                     background-color: $grey_color_3;
-                    color: $white_color_6;
+                    color: $grey_color_2;
                     padding: 10px 5px;
                     text-align: center;
                     font-size: 14px;
@@ -160,9 +180,16 @@
                     border: 3px solid #202020;
                     cursor: pointer;
                     transition: 0.2s;
+                    &.wmode {
+                        border: 3px solid none;                      
+                    }
                     &.active {
                         border: 3px solid $white_color;
                         transition: 0.2s;
+                        &.wmode {
+                            border: 3px solid $black_color; 
+                            background-color: $white_color;                           
+                        }
                     }
                 }
                 .bar {
@@ -172,15 +199,22 @@
                     border-bottom: 2px solid #202020;
                     height: 7px;
                     margin-top: 6px;
+                    &.wmode {
+                        background-color: $white_color;
+                        border-top: 2px solid $grey_color_3;
+                        border-bottom: 2px solid $grey_color_3;
+                    }
                 }
             }
             .buy-button {
                 background-color: $green_color;
-                color: $white_color;
                 text-align: center;
                 padding: 10px 0;
                 font-family: 'Roboto-Bold';
                 margin-top: 10px;
+                &.wmode {
+                    color: $white_color;
+                }
                 &.sell {
                     background-color: $red_color;
                 }
@@ -190,9 +224,18 @@
         .middle-block {
             width: 100%;
             background-color: $grey_color;
+            &.wmode {
+                background-color: $white_color;
+                border-left: 1px solid $grey_color_2;
+                border-right: 1px solid $grey_color_2;
+            }
         }
         .assets-block {
             background-color: $grey_color;
+            &.wmode {
+                background-color: $white_color;
+                color: $black_color;
+            }
             display: flex;
             flex-direction: column;
             padding: 20px 8px;
@@ -206,14 +249,20 @@
                     width: calc(50% - 5px);
                     background: none;
                     border: 1px solid $grey_color_1;
-                    color: $white_color;
                     text-align: center;
                     padding: 10px 0;
                     font-family: 'Roboto-Bold';
                     cursor: pointer;
                     transition: .2s;
+                    &.wmode {
+                        color: $grey_color_2;
+                        border: 1px solid $grey_color_2;
+                    }
                     &.active {
                         background: $grey_color_3;
+                        &.wmode {
+                            color: $white_color;
+                        }
                     }
                 }
                 margin-bottom: 15px;
@@ -223,8 +272,13 @@
                 padding: 10px 15px;
                 display: flex;
                 flex-direction: row;
+                &.wmode {
+                    background-color: $white_color;
+                    color: $grey_color_2;
+                    border: 1px solid $grey_color_2;
+                }
                 i {
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     margin-right: 10px;
                 }
                 .sr-input {
@@ -235,6 +289,10 @@
                     color: white;
                     background: none;
                     border: none;
+                    &.wmode {
+                        background-color: $white_color;
+                        color: $black_color;
+                    }
                     &:focus {
                         outline: none;
                     }
@@ -267,6 +325,9 @@
                             &.th-last {
                                 width: 30%;
                             }
+                            &.wmode {
+                                color: $black_color;
+                            }
                         }
                     }
                     .table-row {
@@ -286,7 +347,7 @@
                                     width: 20px;
                                     height: 20px;
                                     border-radius: 100%;
-                                    background-color: $white_color;
+                                    background-color: $red_color;
                                     margin-right: 10px;
                                 }
                                 .tf-detail {
@@ -296,6 +357,9 @@
                                         font-family: 'Roboto-Bold';
                                         font-size: 16px;
                                         color: $white_color;
+                                        &.wmode {
+                                            color: $black_color;
+                                        }
                                     }
                                     .name {
                                         color: $grey_color_3;
@@ -333,7 +397,7 @@
                             font-size: 14px;
                         }
                         .check {
-                            color: $white_color_6;
+                            color: $grey_color_3;
                             label {
                                 font-size: 12px;
                                 margin-left: 5px;
@@ -370,6 +434,9 @@
                         padding: 3px 0;
                         &.secondary {
                             background: $grey_color_1;
+                            &.wmode {
+                                background-color: $grey_color_2;
+                            }
                         }
                         .name-cell {
                             display: flex;
@@ -384,7 +451,6 @@
                             .nc-text {
                                 font-size: 14px;
                                 margin-left: 5px;
-                                color: $white_color;
                             }
                         }
                         .price {
@@ -393,7 +459,6 @@
                             padding-right: 10px;
                             &.bold {
                                 font-family: 'Roboto-Bold';
-                                color: $white_color;
                             }
                         }
                     }
@@ -415,10 +480,13 @@
                         padding: 10px 0;
                         text-align: center;
                         font-family: 'Roboto-Bold';
-                        color: $white_color;
                         border: 1px solid $grey_color_3;
                         cursor: pointer;
                         user-select: none;
+                        &.wmode {
+                            border: 1px solid $grey_color_2;
+                            color: $grey_color_2;
+                        }
                     }
                 }
             }
@@ -426,6 +494,9 @@
     }
     .bottom-container {
         background-color: $grey_color;
+        &.wmode {
+            background-color: $white_color;
+        }
         margin-top: 15px;
         height: calc(100vh - 650px);
         min-height: 200px;
@@ -439,14 +510,20 @@
                 flex-direction: row;
                 .tab {
                     background: $grey_color_1;
+                    &.wmode {
+                        background-color: $grey_color_2;
+                        color: $white_color;
+                    }
                     padding: 15px;
-                    color: $white_color;
                     margin-right: 10px;
                     cursor: pointer;
                     user-select: none;
                     transition: 0.2s;
                     &.active {
                         background: $grey_color_3;
+                        &.wmode {
+                            background-color: $grey_color_1;
+                        }
                         transition: 0.2s;
                     }
                 }
@@ -457,7 +534,7 @@
                 margin-top: auto;
                 margin-bottom: auto;
                 label {
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     margin-left: 3px;
                     font-size: 12px;
                     display: flex;
@@ -466,7 +543,7 @@
                 }
                 i {
                     margin-left: 10px;
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -476,6 +553,9 @@
         .bottom-table {
             height: calc(100% - 50px);
             border: 1px solid $grey_color_1;
+            &.wmode {
+                border: 1px solid $grey_color_2;
+            }
             .date-row {
                 display: flex;
                 flex-direction: row;
@@ -483,14 +563,17 @@
                 margin-top: 15px;
                 .period {
                     font-size: 12px;
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     padding: 5px 10px;
                     cursor: pointer;
                     &.active {
                         background: $grey_color_1;
                         border-radius: 3px;
-                        color: $white_color;
                         font-family: 'Roboto-Bold';
+                        &.wmode {
+                            color: $white_color;
+                            background-color: $grey_color_2;
+                        }
                     }
                 }
                 .filter-input {
@@ -516,7 +599,7 @@
                 margin-top: 15px;
                 .cell {
                     font-size: 12px;
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     display: flex;
                     flex-direction: row;
                     i {
@@ -530,7 +613,7 @@
                     display: flex;
                     flex-direction: row;
                     font-size: 12px;
-                    color: $white_color_6;
+                    color: $grey_color_3;
                     .red {
                         color: $red_color;
                         padding: 0 3px;

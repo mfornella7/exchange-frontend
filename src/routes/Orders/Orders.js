@@ -12,9 +12,10 @@ class Orders extends Component {
   }
 
   render() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
       <div className="Orders">
-        <div className="o-tabs">
+        <div className={"o-tabs" + wmode}>
           <div className="tab" onClick={() => {
             this.props.history.push('/funds?tab=balance')
           }}>Balance</div>
@@ -29,8 +30,8 @@ class Orders extends Component {
             this.props.history.push('/funds?tab=transactions')
           }}>Transactions</div>
         </div>
-        <div className="title">Open Orders</div>
-        <div className="detail-block">
+        <div className={"title" + wmode}>Open Orders</div>
+        <div className={"detail-block" + wmode}>
           <div className="blue-text">No Live Orders</div>
           <div className="white-text">You have no live orders.</div>
           <div className="white-text">Once placed, orders are displayed here. Live orders can be edited or cancelled.</div>
@@ -41,6 +42,7 @@ class Orders extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  mode: state.setting.mode
 });
 
 const mapDispatchToProps = {

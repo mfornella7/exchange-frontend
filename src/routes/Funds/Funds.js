@@ -39,10 +39,11 @@ class Funds extends Component {
   }
 
   renderContent() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     if (this.state.selectedTab === 0)
       return(
         <div className="fund-content">
-          <div className="balance-block">
+          <div className={"balance-block" + wmode}>
             <div className="balance-item">
               <div className="grey-text">Estimated Balance</div>
               <div className="balance">
@@ -69,15 +70,15 @@ class Funds extends Component {
             </div>
           </div>
           <div className="title">Balance</div>
-          <div className="wallet-block">
+          <div className={"wallet-block" + wmode}>
             <div className="wb-header">
               <div className="check-option">
-                <div className="check">
-                  <div className="circle"></div>
+                <div className={"check" + wmode}>
+                  <div className={"circle" + wmode}></div>
                 </div>
                 <div className="co-text">Show zero balance wallets</div>
               </div>
-              <div className="search-row">
+              <div className={"search-row" + wmode}>
                 <i className="fa fa-search" aria-hidden="true"></i>
                 <input className="sr-input" placeholder="Search in my balances..."/>
               </div>
@@ -88,8 +89,8 @@ class Funds extends Component {
       );
     if (this.state.selectedTab === 1)
       return(
-        <div className="fund-content">
-          <div className="deposit-block">
+        <div className={"fund-content" + wmode}>
+          <div className={"deposit-block" + wmode}>
             <div className="db-header">
               <div className="db-title">Deposits</div>
               <img src={"https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"} alt="" className="btc-img"></img>
@@ -104,9 +105,9 @@ class Funds extends Component {
               Please enable 2 factor authentication in order to enable<br/>
               deposit service.
             </div>
-            <div className="blue-button">Enable 2-Factor Authentications</div>
+            <div className={"blue-button" + wmode}>Enable 2-Factor Authentications</div>
           </div>
-          <div className="completed-block">
+          <div className={"completed-block" + wmode}>
             <div className="cb-title">Completed Deposits | BTC</div>
             <div className="blue-text">No Transactions Available</div>
             <div className="white-text">You have no trasnactions yet.</div>
@@ -116,8 +117,8 @@ class Funds extends Component {
       );
     if (this.state.selectedTab === 2)
       return(
-        <div className="fund-content">
-          <div className="deposit-block">
+        <div className={"fund-content" + wmode}>
+          <div className={"deposit-block" + wmode}>
             <div className="db-header">
               <div className="db-title">Withdrawals</div>
               <img src={"https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg"} alt="" className="btc-img"></img>
@@ -136,9 +137,9 @@ class Funds extends Component {
               Please enable 2 factor authentication in order to enable<br/>
               deposit service.
             </div>
-            <div className="blue-button">Enable 2-Factor Authentications</div>
+            <div className={"blue-button" + wmode}>Enable 2-Factor Authentications</div>
           </div>
-          <div className="completed-block">
+          <div className={"completed-block" + wmode}>
             <div className="cb-title">Withdrawal Requests | BTC</div>
             <div className="table-row">
               <div className="cell">ID</div>
@@ -152,7 +153,7 @@ class Funds extends Component {
               <div/>
             </div>
             </div>
-          <div className="completed-block">
+          <div className={"completed-block" + wmode}>
             <div className="cb-title">Completed Withdrawals | BTC</div>
             <div className="blue-text">No Transactions Available</div>
             <div className="white-text">You have no trasnactions yet.</div>
@@ -162,8 +163,8 @@ class Funds extends Component {
       );
       if (this.state.selectedTab === 3) {
         return (
-          <div className="fund-content">
-            <div className="order-block">
+          <div className={"fund-content" + wmode}>
+            <div className={"order-block" + wmode}>
               <div className="ob-title">Open Orders</div>
               <div className="blue-text">No Live Orders</div>
               <div className="white-text">You have no live orders.</div>
@@ -174,8 +175,8 @@ class Funds extends Component {
       }
       if (this.state.selectedTab === 4) {
         return (
-          <div className="fund-content">
-            <div className="order-block">
+          <div className={"fund-content" + wmode}>
+            <div className={"order-block" + wmode}>
               <div className="ob-title">Transactions</div>
               <div className="account-row">
                 <div className="text">Select Account</div>
@@ -188,9 +189,9 @@ class Funds extends Component {
               <div className="white-text">Transactions are generated by buying/selling Executions, lending-related activities, and deposit/withdrawal actions.</div>
             </div>
             <div className="title" style={{marginLeft: '30px'}}>Overview Report</div>
-            <div className="overview-block">
+            <div className={"overview-block" + wmode}>
               <div className="ob-title">Select Range</div>
-              <div className="filter-row">
+              <div className="filter-row second">
                 <div className="ftext">From</div>
                 <div className="dfilters">
                   <div className="item">
@@ -228,9 +229,10 @@ class Funds extends Component {
   }
 
   render() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
-      <div className="Funds">
-        <div className="f-tabs">
+      <div className={"Funds" + wmode}>
+        <div className={"f-tabs" + wmode}>
           <div className={this.state.selectedTab===0?"tab active":"tab"}
             onClick={() => {this.setState({selectedTab: 0})}}>Balance</div>
           <div className={this.state.selectedTab===1?"tab active":"tab"}
@@ -249,6 +251,7 @@ class Funds extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  mode: state.setting.mode
 });
 
 const mapDispatchToProps = {

@@ -9,6 +9,11 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        &.wmode {
+            background: $white_color;
+            color: $black_color;
+            border-bottom: 1px solid $grey_color_3;
+        }
         .header-left {
             margin-left: 30px;
             display: flex;
@@ -80,7 +85,7 @@
 
                     }
                     .white-6 {
-                        color: $white_color_6;
+                        color: $grey_color_3;
                         font-size: 12px;
                     }
                     .white-bold {
@@ -113,6 +118,9 @@
                 border-radius: 6px;
                 cursor: pointer;
                 margin-right: 30px;
+                &.wmode {
+                    color: $white_color;
+                }
                 @media screen and (max-width: 1400px) {
                     margin-right: 10px;
                 }
@@ -121,11 +129,18 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                margin-right: 20px;
-                color: $white_color_6;
+                margin-right: 10px;
+                color: $grey_color_3;
                 @media screen and (max-width: 1400px) {
                     margin-right: 10px;
                 }
+            }
+            .mode {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                cursor: pointer;
+                margin-right: 10px;
             }
             .user-image {
                 display: flex;
@@ -142,7 +157,7 @@
                 flex-direction: column;
                 justify-content: center;
                 font-family: 'Roboto-Medium';
-                color: $white_color_6;
+                color: $grey_color_3;
                 font-size: 14px;
                 @media screen and (max-width: 1400px) {
                     margin-left: 10px;

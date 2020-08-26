@@ -13,6 +13,9 @@
                 font-family: 'Roboto-Bold';
                 color: $white_color;
                 font-size: 34px;
+                &.wmode {
+                    color: $black_color;
+                }
             }
             .rule {
                 display: flex;
@@ -24,6 +27,10 @@
         .invite-block {
             padding: 40px 40px;
             background: $grey_color;
+            &.wmode {
+                background-color: $white_color;
+                border: 1px solid $grey_color_2;
+            }
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -35,7 +42,7 @@
                     display: flex;
                     flex-direction: column;
                     .description {
-                        color: $white_color_6;
+                        color: $grey_color_2;
                         font-size: 14px;
                          i {
                              margin-left: 8px;
@@ -46,6 +53,9 @@
                         font-family: 'Roboto-Bold';
                         font-size: 26px;
                         padding: 10px 0 5px 0;
+                        &.wmode {
+                            color: $black_color;
+                        }
                     }
                 }
             }
@@ -63,7 +73,13 @@
         .payout-block {
             display: flex;
             flex-direction: column;
-            background: $grey_color;
+            background-color: $grey_color;
+            color: $white_color;
+            &.wmode {
+                color: $black_color;
+                background-color: rgb(240, 240, 240);
+                border: 1px solid $grey_color_2;
+            }
             margin-top: 20px;
             .pb-header {
                 display: flex;
@@ -75,33 +91,35 @@
                     display: flex;
                     flex-direction: column;
                     .text {
-                        color: $white_color_6;
+                        color: $grey_color_2;
                         font-size: 14px;
                          i {
                              margin-left: 8px;
                          }
                     }
                     .usd {
-                        color: $white_color;
                         font-family: 'Roboto-Bold';
                         font-size: 26px;
                         padding-top: 10px;
                     }
                     &.deactive {
-                        background: #0D0E11;
+                        background-color: #0D0E11;
+                        &.wmode {
+                            color: $black_color;
+                            background-color: $white_color;
+                        }
                     }
                 }
             }
             .text-white {
                 text-align: center;
-                color: $white_color;
                 padding-top: 70px;
                 font-family: 'Roboto-Bold';
                 font-size: 26px;
             }
             .text-grey {
                 text-align: center;
-                color: $white_color_6;
+                color: $grey_color_2;
                 padding-top: 20px;
                 padding-bottom: 160px;
                 font-family: 'Roboto-Bold';

@@ -30,30 +30,31 @@ class Home extends Component {
   }
 
   renderStepbar() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
       <ul className="step-bar">
         <div 
-          className={this.state.step === 0 ?"rect active":"rect"}
+          className={this.state.step === 0 ?"rect active" + wmode:"rect" + wmode}
           onClick={() => { this.setState({step: 0}); }}
         />
-        <div className="bar"></div>
+        <div className={"bar" + wmode}></div>
         <div 
-          className={this.state.step === 1 ?"rect active":"rect"}
+          className={this.state.step === 1 ?"rect active" + wmode:"rect" + wmode}
           onClick={() => { this.setState({step: 1}); }}
         />
-        <div className="bar"></div>
+        <div className={"bar" + wmode}></div>
         <div 
-          className={this.state.step === 2 ?"rect active":"rect"}
+          className={this.state.step === 2 ?"rect active" + wmode:"rect" + wmode}
           onClick={() => { this.setState({step: 2}); }}
         />
-        <div className="bar"></div>
+        <div className={"bar" + wmode}></div>
         <div 
-          className={this.state.step === 3 ?"rect active":"rect"}
+          className={this.state.step === 3 ?"rect active" + wmode:"rect" + wmode}
           onClick={() => { this.setState({step: 3}); }}
         />
-        <div className="bar"></div>
+        <div className={"bar" + wmode}></div>
         <div 
-          className={this.state.step === 4 ?"rect active":"rect"}
+          className={this.state.step === 4 ?"rect active" + wmode:"rect" + wmode}
           onClick={() => { this.setState({step: 4}); }}
         />
       </ul>
@@ -61,23 +62,24 @@ class Home extends Component {
   }
 
   renderMarketTab() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     if (this.state.marketTab === 0) {
       return (
         <div>
           <div className="input-row">
             <div className="ir-text">Price</div>
-            <input className="ir-input" placeholder="" value="11510,16" id="p1"/>
+            <input className={"ir-input" + wmode} placeholder="" value="11510,16" id="p1"/>
             <div className="ir-asset">USDT</div>
           </div>
           <div className="input-row">
             <div className="ir-text">Amount</div>
-            <input className="ir-input" placeholder="" value="0.0000086000"/>
+            <input className={"ir-input" + wmode} placeholder="" value="0.0000086000"/>
             <div className="ir-asset">BTC</div>
           </div>
           {this.renderStepbar()}
           <div className="input-row">
             <div className="ir-text">Total</div>
-            <input className="ir-input" placeholder="" defaultValue="11510,16"/>
+            <input className={"ir-input" + wmode} placeholder="" defaultValue="11510,16"/>
             <div className="ir-asset">USDT</div>
           </div>
       </div>
@@ -87,12 +89,12 @@ class Home extends Component {
         <div>
           <div className="input-row">
             <div className="ir-text">Price</div>
-            <input className="ir-input" placeholder="" value="Market" id="p2"/>
+            <input className={"ir-input" + wmode} placeholder="" value="Market" id="p2"/>
             <div className="ir-asset">USDT</div>
           </div>
           <div className="input-row">
             <div className="ir-text">Amount</div>
-            <input className="ir-input" placeholder="" value=""/>
+            <input className={"ir-input" + wmode} placeholder="" value=""/>
             <div className="ir-asset">BTC</div>
           </div>
           {this.renderStepbar()}
@@ -103,23 +105,23 @@ class Home extends Component {
         <div>
           <div className="input-row">
             <div className="ir-text">Stop</div>
-            <input className="ir-input" placeholder="" value=""/>
+            <input className={"ir-input" + wmode} placeholder="" value=""/>
             <div className="ir-asset">USDT</div>
           </div>
           <div className="input-row">
             <div className="ir-text">Limit</div>
-            <input className="ir-input" placeholder="" value="11510,16"/>
+            <input className={"ir-input" + wmode} placeholder="" value="11510,16"/>
             <div className="ir-asset">USDT</div>
           </div>
           <div className="input-row">
             <div className="ir-text">Amount</div>
-            <input className="ir-input" placeholder=""/>
+            <input className={"ir-input" + wmode} placeholder=""/>
             <div className="ir-asset">BTC</div>
           </div>
           {this.renderStepbar()}
           <div className="input-row">
             <div className="ir-text">Total</div>
-            <input className="ir-input" placeholder=""/>
+            <input className={"ir-input" + wmode} placeholder=""/>
             <div className="ir-asset">BTC</div>
           </div>
         </div>
@@ -128,8 +130,9 @@ class Home extends Component {
   }
 
   renderBuySell() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
-      <div className="buysell-block">
+      <div className={"buysell-block" + wmode}>
         <div className="bb-header">
           <div className="order-text">Place Order</div>
           <div className="order-icon">
@@ -138,20 +141,20 @@ class Home extends Component {
         </div>
         <div className="bb-buttons1">
           <div 
-            className={this.state.activeButton?"bb-button":"bb-button green"}
+            className={this.state.activeButton?"bb-button":"bb-button green" + wmode}
             onClick={() => this.setState({ activeButton: 0})}
           >BUY</div>
           <div 
-            className={this.state.activeButton?"bb-button red":"bb-button"}
+            className={this.state.activeButton?"bb-button red" + wmode:"bb-button"}
             onClick={() => this.setState({ activeButton: 1})}
           >SELL</div>
         </div>
         <div className="bb-buttons2">
-          <div className={this.state.marketTab === 0?"normal-button active":"normal-button"}
+          <div className={this.state.marketTab === 0?"normal-button active" + wmode:"normal-button" + wmode}
             onClick={() => { this.setState({marketTab: 0}) }}>Limit</div>
-          <div className={this.state.marketTab === 1?"normal-button active":"normal-button"}
+          <div className={this.state.marketTab === 1?"normal-button active" + wmode:"normal-button" + wmode}
             onClick={() => { this.setState({marketTab: 1}) }}>Market</div>
-          <div className={this.state.marketTab === 2?"mixed-button active":"mixed-button"}
+          <div className={this.state.marketTab === 2?"mixed-button active" + wmode:"mixed-button" + wmode}
             onClick={() => { this.setState({marketTab: 2}) }}>
             <i className="fa fa-clock-o clock" aria-hidden="true"></i>
             <div className="text">Stop-limit</div>
@@ -163,7 +166,7 @@ class Home extends Component {
             0.00000000000USDT
         </div>
         {this.renderMarketTab()}
-        <div className={this.state.activeButton?"buy-button sell":"buy-button"}>
+        <div className={this.state.activeButton?"buy-button sell" + wmode:"buy-button" + wmode}>
           {this.state.activeButton?"Sell BTC":"Buy BTC"}
         </div>
       </div>
@@ -171,30 +174,31 @@ class Home extends Component {
   }
 
   renderAssets() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
-      <div className="assets-block">
+      <div className={"assets-block" + wmode}>
         <div className="ab-buttons">
           <div 
-            className={this.state.assetOrBalance=== 0?"ab-button active":"ab-button"}
+            className={this.state.assetOrBalance=== 0?"ab-button active" + wmode:"ab-button" + wmode}
             onClick={() => { this.setState({assetOrBalance: 0}) }}
           >Assets</div>
           <div 
-            className={this.state.assetOrBalance=== 1?"ab-button active":"ab-button"}
+            className={this.state.assetOrBalance=== 1?"ab-button active" + wmode:"ab-button" + wmode}
             onClick={() => { this.setState({assetOrBalance: 1}) }}
           >Balance</div>
         </div>
         {this.state.assetOrBalance === 0 ? 
           <div className="asset-content">
-            <div className="search-row">
+            <div className={"search-row" + wmode}>
               <i className="fa fa-search" aria-hidden="true"></i>
-              <input className="sr-input" placeholder="Search"/>
+              <input className={"sr-input" + wmode} placeholder="Search"/>
             </div>
             <div className="table-content">
               <div className="table-header">
-                <div className="th-cell th-first">Name</div>
-                <div className="th-cell">Price</div>
-                <div className="th-cell">Change</div>
-                <div className="th-cell th-last">
+                <div className={"th-cell th-first" + wmode}>Name</div>
+                <div className={"th-cell" + wmode}>Price</div>
+                <div className={"th-cell" + wmode}>Change</div>
+                <div className={"th-cell th-last" + wmode}>
                   Volume
                   <i className="fa fa-long-arrow-down" aria-hidden="true"></i>
                 </div>
@@ -205,7 +209,7 @@ class Home extends Component {
                     <div className="t-cell t-first">
                       <div className="tf-image"></div>
                       <div className="tf-detail">
-                        <div className="symbol">{asset.symbol}</div>
+                        <div className={"symbol" + wmode}>{asset.symbol}</div>
                         <div className="name">{asset.name}</div>
                       </div>
                     </div>
@@ -219,9 +223,9 @@ class Home extends Component {
           </div>:
           <div className="balance-content">
             <div className="b-search-row">
-              <div className="search-row b-search">
+              <div className={"search-row b-search" + wmode}>
                 <i className="fa fa-search" aria-hidden="true"></i>
-                <input className="sr-input" placeholder="Search"/>
+                <input className={"sr-input" + wmode} placeholder="Search"/>
               </div>
               <div className="balance-details">
                 <div className="text">Balance details</div>
@@ -240,14 +244,14 @@ class Home extends Component {
                 {this.state.balances.map(balance => {
                   return (
                     <div className="tc-rows" key={balance.id}>
-                      <div className={balance.id % 2 === 0?"tc-row secondary":"tc-row"}>
+                      <div className={balance.id % 2 === 0?"tc-row secondary" + wmode:"tc-row"}>
                         <div className="name-cell">
                           <div className="nc-image"></div>
                           <div className="nc-text">{balance.symbol}</div>
                         </div>
                         <div className="price">{balance.p1}</div>
                       </div>
-                      <div className={balance.id % 2 === 0?"tc-row secondary":"tc-row"}>
+                      <div className={balance.id % 2 === 0?"tc-row secondary" + wmode:"tc-row"}>
                         <div className="name-cell">
                         </div>
                         <div className="price bold">{balance.p2}</div>
@@ -263,12 +267,12 @@ class Home extends Component {
                 {this.state.balances.map(balance => {
                   return (
                     <div className="tc-rows" key={balance.id}>
-                      <div className={balance.id % 2 === 0?"tc-row secondary":"tc-row"}>
+                      <div className={balance.id % 2 === 0?"tc-row secondary" + wmode:"tc-row"}>
                         <div className="name-cell">
                         </div>
                         <div className="price bold">{balance.p3}</div>
                       </div>
-                      <div className={balance.id % 2 === 0?"tc-row secondary":"tc-row"}>
+                      <div className={balance.id % 2 === 0?"tc-row secondary" + wmode:"tc-row"}>
                         <div className="name-cell">
                         </div>
                         <div className="price bold">{balance.p4}</div>
@@ -279,8 +283,8 @@ class Home extends Component {
               </div>
             </div>
             <div className="dw-buttons">
-              <div className="dw-button">Deposit</div>
-              <div className="dw-button">Withdraw</div>
+              <div className={"dw-button" + wmode}>Deposit</div>
+              <div className={"dw-button" + wmode}>Withdraw</div>
             </div>
           </div>
         }
@@ -289,36 +293,38 @@ class Home extends Component {
   }
 
   renderTop() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
-      <div className="top-container">
+      <div className={"top-container" + wmode}>
         {this.renderBuySell()}
-          <div className="middle-block"></div>
+          <div className={"middle-block" + wmode}></div>
         {this.renderAssets()}
       </div>
     )
   }
 
   renderBottom() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
-      <div className="bottom-container">
+      <div className={"bottom-container" + wmode}>
         <div className="bc-header">
           <div className="tab-buttons">
             <div 
-              className={this.state.selectedTab === 0?"tab active":"tab"}
+              className={this.state.selectedTab === 0?"tab active" + wmode:"tab" + wmode}
               onClick={() => { this.setState({selectedTab: 0}); }}
             >
               Open Orders(0)
             </div>
             <div 
-              className={this.state.selectedTab === 1?"tab active":"tab"}
+              className={this.state.selectedTab === 1?"tab active" + wmode:"tab" + wmode}
               onClick={() => { this.setState({selectedTab: 1}); }}
             >Order History</div>
             <div 
-              className={this.state.selectedTab === 2?"tab active":"tab"}
+              className={this.state.selectedTab === 2?"tab active" + wmode:"tab" + wmode}
               onClick={() => { this.setState({selectedTab: 2}); }}
             >Trade History</div>
             <div 
-              className={this.state.selectedTab === 3?"tab active":"tab"}
+              className={this.state.selectedTab === 3?"tab active" + wmode:"tab" + wmode}
               onClick={() => { this.setState({selectedTab: 3}); }}
             >Funds</div>
           </div>
@@ -334,9 +340,10 @@ class Home extends Component {
     )
   }
   renderBottomTable() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     if(this.state.selectedTab === 0)
       return (
-        <div className="bottom-table">
+        <div className={"bottom-table" + wmode}>
           <div className="table-row">
             <div className="cell">Date</div>
             <div className="cell">Pair</div>
@@ -359,7 +366,7 @@ class Home extends Component {
       )
     if(this.state.selectedTab === 1)
       return (
-        <div className="bottom-table">
+        <div className={"bottom-table" + wmode}>
           <div className="table-row">
             <div className="cell">
               Coin
@@ -375,14 +382,14 @@ class Home extends Component {
       )
     if(this.state.selectedTab === 2)
       return (
-        <div className="bottom-table">
+        <div className={"bottom-table" + wmode}>
           <div className="date-row">
-            <div className="period active">1 Day</div>
+            <div className={"period active" + wmode}>1 Day</div>
             <div className="period">1 Week</div>
             <div className="period">1 Month</div>
             <div className="period">3 Months</div>
             <input className="filter-input" placeholder="YYYY-MM-DD - YYYY-MM-DD"/>
-            <div className="period active">Search</div>
+            <div className={"period active" + wmode}>Search</div>
           </div>
           <div className="table-row">
             <div className="cell">Data</div>
@@ -399,14 +406,14 @@ class Home extends Component {
       )
     if(this.state.selectedTab === 3)
       return (
-        <div className="bottom-table">
+        <div className={"bottom-table" + wmode}>
           <div className="date-row">
-            <div className="period active">1 Day</div>
+            <div className={"period active" + wmode}>1 Day</div>
             <div className="period">1 Week</div>
             <div className="period">1 Month</div>
             <div className="period">3 Months</div>
             <input className="filter-input" placeholder="YYYY-MM-DD - YYYY-MM-DD"/>
-            <div className="period active">Search</div>
+            <div className={"period active" + wmode}>Search</div>
           </div>
           <div className="table-row">
             <div className="cell">Data</div>
@@ -426,8 +433,9 @@ class Home extends Component {
       )
   }
   render() {
+    let wmode = this.props.mode === 'white' ? ' wmode' : '';
     return (
-      <div className="Home">
+      <div className={"Home" + wmode}>
         {this.renderTop()}
         {this.renderBottom()}
       </div>
@@ -436,6 +444,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state) => ({
+  mode: state.setting.mode
 });
 
 const mapDispatchToProps = {
