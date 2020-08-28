@@ -89,7 +89,7 @@ class Header extends Component {
                         <div className="green-big">11,582.36</div>
                         <div className="mode" onClick={() => this.onChangeMode()}>
                             {this.props.mode === 'dark'?
-                            <i className="fa fa-sun-o" aria-hidden="true"></i>:
+                            <i class='fas fa-sun'></i>:
                             <i className="fa fa-moon-o" aria-hidden="true" style={{color: 'black'}}></i>
                             }
                         </div>
@@ -137,7 +137,7 @@ class Header extends Component {
                     <div className="seperator">|</div>
                     <div className="mode" onClick={() => this.onChangeMode()}>
                         {this.props.mode === 'dark'?
-                        <i className="fa fa-sun-o" aria-hidden="true"></i>:
+                        <i class='fas fa-sun'></i>:
                         <i className="fa fa-moon-o" aria-hidden="true" style={{color: 'black'}}></i>
                         }
                     </div>
