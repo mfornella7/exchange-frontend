@@ -164,13 +164,14 @@
                     background: none;
                     border: 1px solid $grey_color_3;
                     text-align: right;
+                    height: 30px;
                     &.wmode {
                         color: $black_color;
                     }
                     &:focus {
                         outline: none;
                     }
-                    padding: 0 5px;
+                    padding: 5px 5px;
                 }
                 .ir-asset {
                     width: 15%;
